@@ -34,36 +34,36 @@ extension UIView {
     
 }
 
-extension AVAudioSession {
+public extension AVAudioSession {
     
-    static var isHeadphonesConnected: Bool {
+    public static var isHeadphonesConnected: Bool {
         return sharedInstance().isHeadphonesConnected
     }
     
-    var isHeadphonesConnected: Bool {
+    public var isHeadphonesConnected: Bool {
         return !currentRoute.outputs.filter { $0.isHeadphones }.isEmpty
     }
 }
 
-extension Bundle {
-    var releaseVersionNumber: String? {
+public extension Bundle {
+    public var releaseVersionNumber: String? {
         return infoDictionary?["CFBundleShortVersionString"] as? String
     }
-    var buildVersionNumber: String? {
+    public var buildVersionNumber: String? {
         return infoDictionary?["CFBundleVersion"] as? String
     }
-    var displayName: String? {
+    public var displayName: String? {
         return infoDictionary?["CFBundleName"] as? String
     }
 }
 
-extension AVAudioSessionPortDescription {
-    var isHeadphones: Bool {
+public extension AVAudioSessionPortDescription {
+    public var isHeadphones: Bool {
         return portType == AVAudioSession.Port.headphones
     }
 }
 
-func fetchSSIDInfo() ->  String {
+public func fetchSSIDInfo() ->  String {
     var currentSSID = ""
     if let interfaces:CFArray = CNCopySupportedInterfaces() {
         for i in 0..<CFArrayGetCount(interfaces){
@@ -83,7 +83,7 @@ func fetchSSIDInfo() ->  String {
     return currentSSID
 }
 
-extension UILabel {
+public extension UILabel {
     func defaultLabel() -> UILabel {
         self.font = UIFont.systemFont(ofSize: 12)
         return self
@@ -91,8 +91,9 @@ extension UILabel {
 }
 
 
-extension UIDevice {
-    var modelName: String {
+public extension UIDevice {
+    
+    public var modelName: String {
         var systemInfo = utsname()
         uname(&systemInfo)
         let machineMirror = Mirror(reflecting: systemInfo.machine)
@@ -103,7 +104,7 @@ extension UIDevice {
         return identifier
     }
     
-    var memoryUse: Double {
+    public var memoryUse: Double {
         var taskInfo = mach_task_basic_info()
         var count = mach_msg_type_number_t(MemoryLayout<mach_task_basic_info>.size)/4
         let kerr: kern_return_t = withUnsafeMutablePointer(to: &taskInfo) {
@@ -120,12 +121,12 @@ extension UIDevice {
         }
     }
     
-    var totalMemory: Double {
+    public var totalMemory: Double {
         return Double(ProcessInfo.processInfo.physicalMemory / 1073741824)
     }
     
     
-    var cpuInfo: host_cpu_load_info? {
+    public var cpuInfo: host_cpu_load_info? {
         let HOST_CPU_LOAD_INFO_COUNT = MemoryLayout<host_cpu_load_info>.stride/MemoryLayout<integer_t>.stride
         var size = mach_msg_type_number_t(HOST_CPU_LOAD_INFO_COUNT)
         var cpuLoadInfo = host_cpu_load_info()
@@ -141,7 +142,7 @@ extension UIDevice {
         return cpuLoadInfo
     }
     
-    var cpuUsage:  Double {
+    public var cpuUsage:  Double {
         var totalUsageOfCPU: Double = 0.0
         var threadsList = UnsafeMutablePointer(mutating: [thread_act_t]())
         var threadsCount = mach_msg_type_number_t(0)
@@ -176,7 +177,7 @@ extension UIDevice {
         return totalUsageOfCPU
     }
     
-    var isSimulator: String {
+    public var isSimulator: String {
         if (ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] != nil) {
             return "Yes"
         }else {
@@ -184,19 +185,19 @@ extension UIDevice {
         }
     }
     
-    var totalDiskSpace:String {
+    public var totalDiskSpace:String {
         get {
             return ByteCountFormatter.string(fromByteCount: totalDiskSpaceInBytes, countStyle: ByteCountFormatter.CountStyle.binary)
         }
     }
     
-    var freeDiskSpace:String {
+    public var freeDiskSpace:String {
         get {
             return ByteCountFormatter.string(fromByteCount: freeDiskSpaceInBytes, countStyle: ByteCountFormatter.CountStyle.binary)
         }
     }
     
-    var hasJailbreak: String {
+    public var hasJailbreak: String {
         #if arch(i386) || arch(x86_64)
         return "No"
         #else
@@ -214,18 +215,18 @@ extension UIDevice {
         #endif
     }
     
-    var resolution: String{
+    public var resolution: String{
         let nWidth  = UIScreen.main.nativeBounds.width
         let nHeight = UIScreen.main.nativeBounds.height
         return "\(nWidth) x \(nHeight) pixel"
     }
     
-    var batreLvl: String{
+    public var batreLvl: String{
         UIDevice.current.isBatteryMonitoringEnabled = true
         return String(self.batteryLevel * 100) + " %"
     }
     
-    var isCharging: String{
+    public var isCharging: String{
         UIDevice.current.isBatteryMonitoringEnabled = true
         var value: String
         
@@ -238,7 +239,7 @@ extension UIDevice {
         return value
     }
     
-    var isFullCharging: String{
+    public var isFullCharging: String{
         UIDevice.current.isBatteryMonitoringEnabled = true
         var value: String
         if (UIDevice.current.batteryState == .full) {
@@ -249,7 +250,7 @@ extension UIDevice {
         return value
     }
     
-    var gpsComp: String{
+    public var gpsComp: String{
         var gps: String
         if CLLocationManager.locationServicesEnabled() {
             switch CLLocationManager.authorizationStatus() {
@@ -264,7 +265,7 @@ extension UIDevice {
         return gps
     }
     
-    func bluetooth(central: CBCentralManager) -> String {
+    public func bluetooth(central: CBCentralManager) -> String {
         var bluetooth: String
         switch central.state {
         case .poweredOn:
@@ -295,43 +296,43 @@ extension UIDevice {
         return bluetooth
     }
     
-    var carrierName: String {
+    public var carrierName: String {
         return CTCarrier().carrierName ?? "Unknown"
     }
     
-    var carrierCountry: String {
+    public var carrierCountry: String {
         return Locale.current.regionCode ?? "Unknown"
     }
     
-    var isoCountry: String {
+    public var isoCountry: String {
         return CTCarrier().isoCountryCode ?? "Unknown"
     }
     
-    var carrierMobileCode: String {
+    public var carrierMobileCode: String {
         return CTCarrier().mobileCountryCode ?? "Unknown"
     }
     
-    var carrierMobileNetwork: String {
+    public var carrierMobileNetwork: String {
         return CTCarrier().mobileNetworkCode ?? "Unknown"
     }
     
-    var allowVoip: Bool {
+    public var allowVoip: Bool {
         return CTCarrier().allowsVOIP
     }
     
-    var timeZone: String {
+    public var timeZone: String {
         return TimeZone.current.identifier
     }
     
-    var language: String {
+    public var language: String {
         return Locale.current.languageCode ?? "Unknown"
     }
     
-    var country: String {
+    public var country: String {
         return Locale.current.regionCode ?? "Unknown"
     }
     
-    static var systemDeviceType: String = {
+    public static var systemDeviceType: String = {
         var systemInfo = utsname()
         uname(&systemInfo)
         let machineMirror = Mirror(reflecting: systemInfo.machine)
@@ -399,7 +400,7 @@ extension UIDevice {
         return mapToDevice(identifier: identifier)
     }()
     
-    func getAddresses() -> [NetInfo] {
+    public func getAddresses() -> [NetInfo] {
         var addresses = [NetInfo]()
         
         // Get list of all interfaces on the local machine:
@@ -440,7 +441,7 @@ extension UIDevice {
         return addresses
     }
     
-    var cellOrWifi: String {
+    public var cellOrWifi: String {
         let reachability = Reachability()!
         if reachability.connection == .wifi {
             return "Wifi"
@@ -451,7 +452,7 @@ extension UIDevice {
         }
     }
     
-    var phoneComp: String {
+    public var phoneComp: String {
         if CTCarrier().mobileNetworkCode != nil {
             return "Yes"
         }else {
@@ -459,7 +460,7 @@ extension UIDevice {
         }
     }
     
-    var dataComp: String {
+    public var dataComp: String {
         if isConnectedToNetwork() {
             return "Yes"
         }else {
@@ -467,7 +468,7 @@ extension UIDevice {
         }
     }
     
-    var isNFCAvailable: Bool {
+    public var isNFCAvailable: Bool {
         if NSClassFromString("NFCNDEFReaderSession") == nil { return false }
         if #available(iOS 11.0, *) {
             return NFCNDEFReaderSession.readingAvailable
@@ -477,15 +478,15 @@ extension UIDevice {
     }
     
     
-    var routerIP: String {
+    public var routerIP: String {
         return FGRoute.getGatewayIP()
     }
     
-    var wifiMacAddr: String {
+    public var wifiMacAddr: String {
         return FGRoute.getBSSID() ?? "Unknown"
     }
     
-    func isDebuggerAttached() -> String {
+    public func isDebuggerAttached() -> String {
         if getppid() != 1 {
             return "Yes"
         }else{
@@ -493,7 +494,7 @@ extension UIDevice {
         }
     }
     
-    var getContact: String{
+    public var getContact: String{
         let contactStore = CNContactStore()
         let keysToFetch = [
             CNContactFormatter.descriptorForRequiredKeys(for: .fullName),
@@ -528,7 +529,7 @@ extension UIDevice {
         }
     }
     
-    var checkAppInstall: String {
+    public var checkAppInstall: String {
         
         let appName = "DeviceInfo"
         let appScheme = "\(appName)://DeviceInfo"
@@ -547,13 +548,13 @@ extension UIDevice {
 }
 
 
-var totalDiskSpaceInBytes:Int64 {
+public var totalDiskSpaceInBytes:Int64 {
     guard let systemAttributes = try? FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory() as String),
         let space = (systemAttributes[FileAttributeKey.systemSize] as? NSNumber)?.int64Value else { return 0 }
     return space
 }
 
-var freeDiskSpaceInBytes:Int64 {
+public var freeDiskSpaceInBytes:Int64 {
     if #available(iOS 11.0, *) {
         if let space = try? URL(fileURLWithPath: NSHomeDirectory() as String).resourceValues(forKeys: [URLResourceKey.volumeAvailableCapacityForImportantUsageKey]).volumeAvailableCapacityForImportantUsage {
             return space ?? 0
@@ -570,7 +571,7 @@ var freeDiskSpaceInBytes:Int64 {
     }
 }
 
-func MBFormatter(_ bytes: Int64) -> String {
+public func MBFormatter(_ bytes: Int64) -> String {
     let formatter = ByteCountFormatter()
     formatter.allowedUnits = ByteCountFormatter.Units.useMB
     formatter.countStyle = ByteCountFormatter.CountStyle.decimal
@@ -578,12 +579,12 @@ func MBFormatter(_ bytes: Int64) -> String {
     return formatter.string(fromByteCount: bytes) as String
 }
 
-struct NetInfo {
+public struct NetInfo {
     let ip: String
     let netmask: String
 }
 
-func isConnectedToNetwork() -> Bool {
+public func isConnectedToNetwork() -> Bool {
     var zeroAddress = sockaddr_in(sin_len: 0, sin_family: 0, sin_port: 0, sin_addr: in_addr(s_addr: 0), sin_zero: (0, 0, 0, 0, 0, 0, 0, 0))
     zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
     zeroAddress.sin_family = sa_family_t(AF_INET)
