@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'deviceCapture_Example' do
+  pod 'deviceCapture', :path => '../'
+
+  target 'deviceCapture_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
