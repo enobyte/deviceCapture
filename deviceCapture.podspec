@@ -31,7 +31,7 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'deviceCapture/Classes/**/*'
-  s.swift-version = '4.2
+  s.swift-version = '4.2'
   s.dependency 'ReachabilitySwift'
   s.dependency 'FGRoute'
   
