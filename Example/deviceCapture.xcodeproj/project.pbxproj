@@ -15,7 +15,6 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		925DD16B678728755174CA1E /* Pods_deviceCapture_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAB4838D319CCD475D42891F /* Pods_deviceCapture_Example.framework */; };
-		E8162867224B19BC00581713 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8162866224B19BC00581713 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +45,6 @@
 		C06C2670B5D715958D331281 /* Pods-deviceCapture_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-deviceCapture_Tests.debug.xcconfig"; path = "Target Support Files/Pods-deviceCapture_Tests/Pods-deviceCapture_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C0E06C982A529BD73BCD5358 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		E2E2358C5F6570250751C434 /* Pods-deviceCapture_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-deviceCapture_Tests.release.xcconfig"; path = "Target Support Files/Pods-deviceCapture_Tests/Pods-deviceCapture_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		E8162866224B19BC00581713 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F43964CDD155CFD5F1F79111 /* Pods-deviceCapture_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-deviceCapture_Example.debug.xcconfig"; path = "Target Support Files/Pods-deviceCapture_Example/Pods-deviceCapture_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F55B56A85624689F01FD1202 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,7 +99,6 @@
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
-				E8162866224B19BC00581713 /* Extensions.swift */,
 			);
 			name = "Example for deviceCapture";
 			path = deviceCapture;
@@ -342,7 +339,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
-				E8162867224B19BC00581713 /* Extensions.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

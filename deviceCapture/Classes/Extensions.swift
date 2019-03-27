@@ -1,10 +1,10 @@
 //
-//  Extensions.swift
-//  deviceCapture_Example
+//  Extension.swift
+//  deviceCapture
 //
 //  Created by OCIN on 27/3/19.
-//  Copyright © 2019 CocoaPods. All rights reserved.
 //
+
 
 import Foundation
 import UIKit
@@ -604,5 +604,6 @@ func isConnectedToNetwork() -> Bool {
     
     return ret
 }
+
 
 

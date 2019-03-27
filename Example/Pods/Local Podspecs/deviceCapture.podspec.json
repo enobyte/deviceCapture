@@ -1,7 +1,7 @@
 {
   "name": "deviceCapture",
   "version": "0.1.0",
-  "summary": "A short description of deviceCapture.",
+  "summary": "Capture for information Device - OneConnect Jakarta",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/enobyte/deviceCapture",
   "license": {
@@ -16,7 +16,15 @@
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.3"
   },
-  "source_files": "deviceCapture/Classes/**/*"
+  "source_files": "deviceCapture/Classes/**/*",
+  "dependencies": {
+    "ReachabilitySwift": [
+
+    ],
+    "FGRoute": [
+
+    ]
+  }
 }
