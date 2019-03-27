@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import deviceCapture
 
 class ViewController: UIViewController {
     @IBOutlet weak var test: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
     
     }
 
