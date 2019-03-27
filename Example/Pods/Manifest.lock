@@ -1,5 +1,5 @@
 PODS:
-  - deviceCapture (0.1.0):
+  - deviceCapture (0.1.1):
     - FGRoute
     - ReachabilitySwift
   - FGRoute (1.0.4)
@@ -20,10 +20,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  deviceCapture: 6da7adf534fbdb12bb236684e180e99d2544798e
+  deviceCapture: 22f071eba126222a336be512424acd92a8663e96
   FGRoute: 5a1da5e6702e672b07409904b0db50159c5711be
   ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
 
-PODFILE CHECKSUM: 2deba32784b25b3edb1914fea056f8df3d06519e
+PODFILE CHECKSUM: 913ac86b80ff078382bdae70e5507c4ff28dc456
 
 COCOAPODS: 1.6.1
