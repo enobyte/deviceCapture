@@ -2,7 +2,9 @@ use_frameworks!
 
 target 'deviceCapture_Example' do
   pod 'deviceCapture', :path => '../'
-
+  pod 'ReachabilitySwift'
+  pod "FGRoute"
+	
   target 'deviceCapture_Tests' do
     inherit! :search_paths
 

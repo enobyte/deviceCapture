@@ -1,0 +1,27 @@
+PODS:
+  - deviceCapture (0.1.0)
+  - FGRoute (1.0.4)
+  - ReachabilitySwift (4.3.0)
+
+DEPENDENCIES:
+  - deviceCapture (from `../`)
+  - FGRoute
+  - ReachabilitySwift
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - FGRoute
+    - ReachabilitySwift
+
+EXTERNAL SOURCES:
+  deviceCapture:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  deviceCapture: 03a836fa570485564c200d852a33a36f759be4b5
+  FGRoute: 5a1da5e6702e672b07409904b0db50159c5711be
+  ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
+
+PODFILE CHECKSUM: 2deba32784b25b3edb1914fea056f8df3d06519e
+
+COCOAPODS: 1.6.1

@@ -1,0 +1,6 @@
+framework module deviceCapture {
+  umbrella header "deviceCapture-umbrella.h"
+
+  export *
+  module * { export * }
+}

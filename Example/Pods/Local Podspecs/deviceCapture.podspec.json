@@ -1,0 +1,22 @@
+{
+  "name": "deviceCapture",
+  "version": "0.1.0",
+  "summary": "A short description of deviceCapture.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/enobyte/deviceCapture",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "enobyte": "enoraden@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/enobyte/deviceCapture.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "deviceCapture/Classes/**/*"
+}

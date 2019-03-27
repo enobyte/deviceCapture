@@ -1,0 +1,6 @@
+framework module Pods_deviceCapture_Example {
+  umbrella header "Pods-deviceCapture_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
