@@ -22,7 +22,9 @@ pod 'deviceCapture'
 
 ## How to use
 
--> Battry.text = UIDevice.current.batreLvl (Explore for other function with UIDevice.current.something)
+=> import deviceCapture
+
+=> Battry.text = UIDevice.current.batreLvl  (Explore for other function with UIDevice.current.something)
 
 ## Author
 
