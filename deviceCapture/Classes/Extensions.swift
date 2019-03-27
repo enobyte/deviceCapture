@@ -59,7 +59,7 @@ extension Bundle {
 
 extension AVAudioSessionPortDescription {
     var isHeadphones: Bool {
-        return portType == AVAudioSession.Port.headphones
+        return portType == AVAudioSessionPortHeadphones
     }
 }
 
