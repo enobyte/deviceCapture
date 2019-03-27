@@ -20,6 +20,10 @@ it, simply add the following line to your Podfile:
 pod 'deviceCapture'
 ```
 
+## How to use
+
+-> Battry.text = UIDevice.current.batreLvl (Explore for other function with UIDevice.current.something)
+
 ## Author
 
 enobyte, enoraden@gmail.com
