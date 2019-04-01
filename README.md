@@ -33,3 +33,7 @@ enobyte, enoraden@gmail.com
 ## License
 
 deviceCapture is available under the MIT license. See the LICENSE file for more info.
+
+## API
+
+See the full [API](API.md) available for this plugin.
