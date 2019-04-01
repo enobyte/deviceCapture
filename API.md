@@ -218,7 +218,43 @@ Don't forget add Contact Requirement in Info.plist
 	<string>Apps Will Capture your Contact (Replace me)</string>
 ```
 
+## Location
 
+Example :
+
+```
+class MainViewController: UIViewController, CLLocationManagerDelegate{
+    var locationManager:CLLocationManager!
+}
+
+override func viewDidLoad() {
+        super.viewDidLoad()
+        determineMyCurrentLocation()
+}
+
+func determineMyCurrentLocation() {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.startUpdatingLocation()
+        }
+}
+
+func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let userLocation:CLLocation = locations[0] as CLLocation
+        userLocation.coordinate.latitude // Get Latitude
+	userLocation.coordinate.longitude // Get Longitude
+        userLocation.altitude // Get Altitude
+	userLocation.speed // Get Speed
+        
+  }
+
+func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {}
+func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {}
+```
 
 
 
