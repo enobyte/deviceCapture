@@ -256,6 +256,22 @@ func locationManager(_ manager: CLLocationManager, didFailWithError error: Error
 func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {}
 ```
 
+## Bluetooth Component 
+
+```
+class MainViewController: UIViewController{
+ var managerBluetooth:CBCentralManager!
+}
+
+override func viewDidLoad() {
+        super.viewDidLoad()
+        managerBluetooth          = CBCentralManager()
+        managerBluetooth.delegate = self as? CBCentralManagerDelegate
+}
+
+Use this : UIDevice.current.bluetooth(central: managerBluetooth)
+```
+
 
 
 
