@@ -211,6 +211,12 @@ UIDevice.current.routerIP
 ```
 UIDevice.current.getContact
 ```
+Don't forget add Contact Requirement in Info.plist
+
+```
+<key>NSContactsUsageDescription</key>
+	<string>Apps Will Capture your Contact (Replace me)</string>
+```
 
 
 
