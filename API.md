@@ -113,8 +113,17 @@ AVAudioSession.isHeadphonesConnected
 ```
 
 ## NFC Component (Boolean)
+
 ```
 UIDevice.current.isNFCAvailable
+```
+
+For iPhone 7 and newer model you add NFC Requirement in Info.plist :
+```
+<key>UIRequiredDeviceCapabilities</key>
+    <array>
+        <string>nfc</string>
+    </array>
 ```
 
 ## Carrier Name
