@@ -95,7 +95,7 @@ fetchSSIDInfo().isEmpty
 ## Data Component
 
 ```
-Data Component: \(UIDevice.current.dataComp
+Data Component: UIDevice.current.dataComp
 ```
 
 ## GPS Component
